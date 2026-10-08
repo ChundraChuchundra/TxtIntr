@@ -43,7 +43,13 @@ int main(int argc, char* argv[]) {
         cerr << "Ошибка: нужно от 7 до 9 операндов (сейчас: " << v.size() << ")\n";
         return 1;
     }
-
+    bool allZeros = true;
+    for (double x:v) {
+        if (x != 0.0) { allZeros = false; break; }
+    }
+    if (allZeros) {
+        cout << "Я уверен, вы можете лучше :)" << endl;
+    }
     double res = 0.0;
     if (op == "mean") {
         for (double x : v) res += x;
